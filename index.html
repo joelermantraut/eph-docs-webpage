@@ -6,6 +6,10 @@
     <title>Manual de Usuario - E-Commerce Product Hub</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="front-img-container">
@@ -20,7 +24,7 @@
     </div>
 
     <div class="browser">
-      <input type="text">
+      <input type="text" placeholder="Buscar...">
     </div>
 
     <div class="container">
@@ -98,7 +102,9 @@
                 presionar el botón “Buscar”, con el símbolo de una lupa a su
                 izquierda.
               </p>
-              <img src="images/busqueda.jpg" alt="busqueda" />
+              <div class="img-container">
+                <img src="images/busqueda.jpg" alt="busqueda" />
+              </div>
               <p>
                 Esto abre directamente el buscado con los archivos encontrados,
                 donde en su descripción se incluya el contenido escrito en el
@@ -114,15 +120,20 @@
                 un cuadro de búsqueda para escribir que nos interesa encontrar,
                 y un botón “Buscar”, para comenzar la búsqueda.
               </p>
-              <img
-                src="images/cuadro_de_busqueda.jpg"
-                alt="cuadro_de_busqueda"
-              />
+              <div class="img-container">
+                  <img
+                  src="images/cuadro_de_busqueda.jpg"
+                  alt="cuadro_de_busqueda"
+                />
+              </div>
+
               <p>
                 Al buscar, se abre la ventana de productos, en este caso para la
                 búsqueda “pintura”:
               </p>
-              <img src="images/productos.png" alt="productos" />
+              <div class="img-container">
+                <img src="images/productos.png" alt="productos" />
+              </div>
               <div id="modo_offline_ordenamiento" class="section">
                 <h4 class="title">Funciones de ordenamiento</h4>
                 <div class="content">
@@ -132,7 +143,9 @@
                     según el código. Si se quiere, se puede elegir según qué
                     columna ordenar, clickeando en los títulos de cada una.
                   </p>
-                  <img src="images/ordenamiento.jpg" alt="ordenamiento" />
+                  <div class="img-container">
+                    <img src="images/ordenamiento.jpg" alt="ordenamiento" />
+                  </div>
                 </div>
               </div>
               <div id="modo_offline_edicion" class="section">
@@ -165,7 +178,9 @@
                   Botón “Ayuda”. Que al presionar, abre este mismo manual.
                 </li>
               </ul>
-              <img src="images/user.png" alt="user" />
+              <div class="img-container">
+                <img src="images/user.png" alt="user" />
+              </div>
             </div>
           </div>
 
@@ -176,7 +191,9 @@
                 Los siguientes controles corresponden al manejo de bases de
                 datos locales.
               </p>
-              <img src="images/bases_de_datos.png" alt="bases_de_datos" />
+              <div class="img-container">
+                <img src="images/bases_de_datos.png" alt="bases_de_datos" />
+              </div>
               <ul>
                 <li>
                   <span class="underlined">Agregar planilla</span>: Permite
@@ -228,10 +245,12 @@
                         Luego de elegir un archivo mediante la ventana de
                         selección de archivo/s, se presentará el siguiente menú:
                       </p>
-                      <img
+                      <div class="img-container">
+                        <img
                         src="images/configuracion_excel.png"
                         alt="configuracion_excel"
                       />
+                      </div>
                       <p>En este menú, se presentan varias opciones:</p>
                       <ul>
                         <li>
@@ -292,12 +311,12 @@
                           en el caso de que el usuario haya olvidado la hoja
                           elegida luego de seleccionarla.
                         </p>
-                        <p>
-                          Para continuar y agregar el libro elegido a la base de
-                          datos local, presionar el botón “Finalizar”. Esto
-                          actualizará la base de datos local.
-                        </p>
                       </div>
+                      <p>
+                        Para continuar y agregar el libro elegido a la base de
+                        datos local, presionar el botón “Finalizar”. Esto
+                        actualizará la base de datos local.
+                      </p>
                     </div>
                   </div>
                   <div
@@ -351,16 +370,22 @@
                         Supondremos que su ganancia es del 35%. En ese caso, el
                         porcentaje total queda:
                       </p>
-                      <img src="images/formula1.png" alt="formula1" />
+                      <div class="img-container">
+                        <img src="images/formula1.png" alt="formula1" />
+                      </div>
                       <p>Por ejemplo, para nuestro caso:</p>
-                      <img src="images/formula2.png" alt="formula2" />
+                      <div class="img-container">
+                        <img src="images/formula2.png" alt="formula2" />
+                      </div>
                       <p>
                         De esta manera, sabemos que el porcentaje que tenemos
                         que aplicar a nuestros productos será de 63%. Si se
                         quieren agregar más de dos incrementos porcentajes, se
                         siguen agregando productos a la ecuación:
                       </p>
-                      <img src="images/formula3.png" alt="formula3" />
+                      <div class="img-container">
+                        <img src="images/formula3.png" alt="formula3" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -392,10 +417,12 @@
                     ventana, que permitirá ver todos los libros disponibles
                     hasta el momento:
                   </p>
-                  <img
+                  <div class="img-container">
+                    <img
                     src="images/editar_bases_de_datos.png"
                     alt="editar_bases_de_datos"
-                  />
+                    />
+                  </div>
                   <p>
                     Como venimos trabajando hasta ahora, solo hay un libro
                     agregado. Para eliminarlo, debemos hacer doble click sobre
@@ -403,10 +430,12 @@
                     ventana confirmando si se desea borrar este libro de la base
                     de datos:
                   </p>
-                  <img
+                  <div class="img-container">
+                    <img
                     src="images/confirmacion_eliminar_libro.png"
                     alt="confirmacion_eliminar_libro"
-                  />
+                    />
+                  </div>
                   <p>
                     A lo que podremos responder afirmativa o negativamente. En
                     caso de presionar “Ok”, el libro se borrará de la base de
@@ -442,9 +471,9 @@
     </div>
 
     <div class="search-indicator">
-      <p><</p>
-      <p>0</p>
-      <p>></p>
+      <p class="search-prev"><</p>
+      <p class="search-num">0</p>
+      <p class="search-next">></p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>

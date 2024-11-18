@@ -1,8 +1,14 @@
 // On page load
 document.addEventListener('DOMContentLoaded', function() {
-    // Get the index element
+    // Get elements
     var index = document.getElementsByClassName("index")[0];
     var menu = index.getElementsByClassName("menu")[0];
+
+    var search_ind = document.getElementsByClassName("search-indicator")[0];
+    var search_els = search_ind.getElementsByTagName("p");
+    var search_prev = search_els[0];
+    var search_num = search_els[1];
+    var search_next = search_els[2];
 
     // Get the list of section titles
     var titles_els = document.getElementsByClassName("title");
@@ -30,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var fuse = undefined;
     // Out of function to access it later
+    var search_results = undefined;
+    var search_curr_index = 0;
 
     fetchDocument("/js/manual.json").then(data => {
         documentData = data;
@@ -45,15 +53,48 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.key === "Enter") {
             // Get the value of the input browser
             var value = browser_el.getElementsByTagName("input")[0].value;
-            var results = fuse.search(value);
-            // Slide the browser to the best match id
-            if (results.length > 0) {
-                var [bestMatch] = results;
-                var index = bestMatch.refIndex;
+            search_results = fuse.search(value);
+            // Get all results, in order of ocurrence
+            // search_results.sort(function(a, b) {
+                // return b.refIndex - a.refIndex;
+            // });
+            // This will sort by higher refIndex first
+            if (search_results.length > 0) {
+                var [bestMatch] = search_results;
+                var index = search_results.indexOf(bestMatch);
                 var id = bestMatch.item.title;
 
+                search_curr_index = index;
+
                 window.location.hash = id;
+                search_num.innerText = String(search_curr_index + 1) + "/" + String(search_results.length);
+                // Slide the browser to the best match id
             }
+        }
+    });
+
+    search_num.addEventListener("click", function(event) {
+        if (search_results != undefined) {
+            id = search_results[search_curr_index].item.title;
+            window.location.hash = id;
+        }
+    });
+
+    search_prev.addEventListener("click", function(event) {
+        if (search_results != undefined && search_curr_index > 0) {
+            search_curr_index--;
+            id = search_results[search_curr_index].item.title;
+            window.location.hash = id;
+            search_num.innerText = String(search_curr_index + 1) + "/" + String(search_results.length);
+        }
+    });
+
+    search_next.addEventListener("click", function(event) {
+        if (search_results != undefined && search_curr_index < search_results.length - 1) {
+            search_curr_index++;
+            id = search_results[search_curr_index].item.title;
+            window.location.hash = id;
+            search_num.innerText = String(search_curr_index + 1) + "/" + String(search_results.length);
         }
     });
 
