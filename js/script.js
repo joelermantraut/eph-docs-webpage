@@ -38,6 +38,23 @@ document.addEventListener('DOMContentLoaded', function() {
         menu.appendChild(li);
     }
 
+    var menu_links = menu.querySelectorAll("a");
+    menu_links.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            objetive_element = document.getElementById(link.href.split('#')[1]);
+            objetive_element.classList.remove('hidden');
+            parent_sections = getParentSectionsByClass(objetive_element);
+            parent_sections.forEach(section => {
+                section.classList.remove('hidden');
+            });
+            
+            window.location.hash = link.href.split('#')[1];
+            // Removes # from url
+        });
+      });
+
     // Add a click event handler to the index element
     index.addEventListener("click", function() {
         menu.classList.toggle("hidden");
@@ -132,4 +149,19 @@ function fetchDocument(doc_path) {
             console.error("Unable to fetch data:", error);
             return null;
         });
+}
+
+function getParentSectionsByClass(element) {
+    const parentSections = [];
+    let currentElement = element.parentElement;
+  
+    // Subir en la jerarquía mientras haya elementos padres
+    while (currentElement) {
+      if (currentElement.classList.contains('section')) {
+        parentSections.push(currentElement);
+      }
+      currentElement = currentElement.parentElement; // Ir al siguiente padre
+    }
+  
+    return parentSections;
 }
