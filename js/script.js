@@ -17,10 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
     titles_els.forEach(title => {
         title.addEventListener('click', () => {
             const section = title.parentElement;
+            let content = section.querySelector(".content");
             if (section.classList.contains('hidden')) {
+                content.style.maxHeight = content.scrollHeight + 'px';
                 section.classList.remove('hidden');
             } else {
                 section.classList.add('hidden');
+                content.style.maxHeight = null;
             }
         });
       });
@@ -59,6 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
     index.addEventListener("click", function() {
         menu.classList.toggle("hidden");
     });
+
+    collideAllSections();
 
     // ------------ INDEX ------------
 
@@ -136,6 +141,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ------------ FOOTER ------------
 });
+
+function collideAllSections() {
+    var sections = document.querySelectorAll(".section");
+    sections.forEach(section => {
+        let content = section.querySelector(".content");
+
+        content.style.maxHeight = null;
+        section.classList.add('hidden');
+    });
+}
 
 function fetchDocument(doc_path) { 
     return fetch(doc_path)
