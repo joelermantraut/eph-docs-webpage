@@ -5,10 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var menu = index.getElementsByClassName("menu")[0];
 
     var search_ind = document.getElementsByClassName("search-indicator")[0];
-    var search_els = search_ind.getElementsByTagName("p");
-    var search_prev = search_els[0];
-    var search_num = search_els[1];
-    var search_next = search_els[2];
+    var search_btns = search_ind.getElementsByTagName("button");
+    var search_num = search_ind.getElementsByTagName("span")[0];
+    var search_close = search_btns[0];
+    var search_prev = search_btns[1];
+    var search_next = search_btns[2];
 
     // Get the list of section titles
     var titles_els = document.getElementsByClassName("title");
@@ -54,11 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get the value of the input browser
             var value = browser_el.getElementsByTagName("input")[0].value;
             search_results = fuse.search(value);
-            // Get all results, in order of ocurrence
-            // search_results.sort(function(a, b) {
-                // return b.refIndex - a.refIndex;
-            // });
-            // This will sort by higher refIndex first
+            // Get all results, in order of best match
             if (search_results.length > 0) {
                 var [bestMatch] = search_results;
                 var index = search_results.indexOf(bestMatch);
@@ -69,6 +66,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.location.hash = id;
                 search_num.innerText = String(search_curr_index + 1) + "/" + String(search_results.length);
                 // Slide the browser to the best match id
+
+                search_ind.classList.remove("hidden");
             }
         }
     });
@@ -78,6 +77,12 @@ document.addEventListener('DOMContentLoaded', function() {
             id = search_results[search_curr_index].item.title;
             window.location.hash = id;
         }
+    });
+
+    search_close.addEventListener("click", function(event) {
+        search_results = undefined;
+        search_curr_index = 0;
+        search_ind.classList.add("hidden");
     });
 
     search_prev.addEventListener("click", function(event) {

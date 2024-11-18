@@ -69,12 +69,16 @@ img {
   background: #ecf0f1;
   padding: 15px;
   border-radius: 8px;
-}
 
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  cursor: pointer;
+}
 .index p {
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 10px;
 }
 
 .menu {
@@ -105,7 +109,7 @@ img {
 }
 
 .browser input {
-  width: 80%;
+  width: 90%;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -184,37 +188,6 @@ button:hover {
   background: #2980b9;
 }
 
-.search-indicator {
-  position: fixed;
-  bottom: 25px;
-  left: 25px;
-  z-index: 1000;
-
-  background: yellow;
-
-  width: 100px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  margin: 0;
-  padding: 0;
-}
-.search-indicator p {
-  padding: 0.5em;
-
-  margin: 0;
-
-  cursor: pointer;
-
-  width: 33%;
-  text-align: center;
-}
-.search-indicator p:hover {
-  background: red;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
   body {
@@ -238,10 +211,6 @@ button:hover {
   .images img {
       width: 100%;
       margin: 5px 0;
-  }
-
-  .browser input {
-      width: 100%;
   }
 }
 
@@ -267,5 +236,100 @@ button:hover {
   button {
       font-size: 14px;
       padding: 8px 12px;
+  }
+}
+
+/* -------------------------- */
+/* -------------------------- */
+/*  Search Indicator Styling  */
+/* -------------------------- */
+/* -------------------------- */
+
+/* Search Indicator Styling */
+.search-indicator {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.search-indicator.hidden {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+/* Buttons */
+.search-indicator button {
+  background: #3498db;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 16px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-indicator button:hover {
+  background: #2980b9;
+}
+
+.search-indicator button:active {
+  background: #1e6b96;
+}
+
+/* Number Display */
+.search-indicator .search-num {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 5px;
+  text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .search-indicator {
+    bottom: 10px;
+    right: 10px;
+    padding: 8px 12px;
+  }
+
+  .search-indicator button {
+    height: 25px;
+    font-size: 14px;
+  }
+
+  .search-indicator .search-num {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-indicator {
+    bottom: 5px;
+    right: 5px;
+    padding: 6px 10px;
+  }
+
+  .search-indicator button {
+    height: 20px;
+    font-size: 12px;
+  }
+
+  .search-indicator .search-num {
+    font-size: 14px;
   }
 }
