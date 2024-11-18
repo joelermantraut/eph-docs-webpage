@@ -12,7 +12,18 @@ document.addEventListener('DOMContentLoaded', function() {
     var search_next = search_btns[2];
 
     // Get the list of section titles
-    var titles_els = document.getElementsByClassName("title");
+    var titles_els = document.querySelectorAll(".section .title");
+
+    titles_els.forEach(title => {
+        title.addEventListener('click', () => {
+            const section = title.parentElement;
+            if (section.classList.contains('hidden')) {
+                section.classList.remove('hidden');
+            } else {
+                section.classList.add('hidden');
+            }
+        });
+      });
 
     // Loop through the titles and add them to the menu
     for (var i = 0; i < titles_els.length; i++) {

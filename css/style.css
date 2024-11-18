@@ -128,6 +128,22 @@ img {
 .section {
   margin: 20px 0;
 }
+.section .title {
+  cursor: pointer;
+}
+.section .title::after {
+  content: "";
+}
+.section.hidden .title::after {
+  content: " (oculto)";
+  font-size: 0.8em;
+}
+.section .content {
+  display: block;
+}
+.section.hidden .content {
+  display: none;
+}
 
 .section .title {
   font-size: 20px;
