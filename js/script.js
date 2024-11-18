@@ -103,6 +103,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ------------ SEARCH INDICATOR ------------
+
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // ------------ FOOTER ------------
 });
 
 function fetchDocument(doc_path) { 
