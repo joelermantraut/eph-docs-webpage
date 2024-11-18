@@ -29,8 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add a click event handler to the index element
     index.addEventListener("click", function() {
-        // Toggle the display of the index element
-        menu.style.display = menu.style.display === "none" ? "block" : "none";
+        menu.classList.toggle("hidden");
     });
 
     // ------------ INDEX ------------
