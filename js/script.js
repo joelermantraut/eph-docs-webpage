@@ -140,6 +140,13 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
     // ------------ FOOTER ------------
+
+    var to_top = document.getElementsByClassName("to-top")[0];
+    to_top.addEventListener("click", function() {
+        window.scrollTo(0, 0);
+    });
+
+    // ------------ TO TOP ------------
 });
 
 function collideAllSections() {

@@ -402,3 +402,38 @@ button:hover {
     font-size: 12px;
   }
 }
+
+/* -------------------------- */
+/* -------------------------- */
+/*       To Top Styling       */
+/* -------------------------- */
+/* -------------------------- */
+
+.to-top {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+
+  width: 40px;
+  height: 40px;
+
+  background: #3498db;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.to-top p {
+  font-size: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .to-top {
+    display: none;
+  }
+}
