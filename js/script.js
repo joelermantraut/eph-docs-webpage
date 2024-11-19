@@ -33,6 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
         var title = titles_els[i].innerText;
         var id = titles_els[i].parentElement.id;
 
+        if (!(titles_els[i].tagName === "H1" || titles_els[i].tagName === "H2"))
+            continue;
+        // Not include all because there are too many titles
+
         var li = document.createElement("li");
         var a = document.createElement("a");
         a.href = "#" + id;
