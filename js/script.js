@@ -21,6 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (section.classList.contains('hidden')) {
                 content.style.maxHeight = content.scrollHeight + 'px';
                 section.classList.remove('hidden');
+                parent_sections = getParentSectionsByClass(objetive_element);
+                parent_sections.forEach(section => {
+                    section.classList.remove('hidden');
+                    content = section.querySelector(".content");
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                });
             } else {
                 section.classList.add('hidden');
                 content.style.maxHeight = null;
