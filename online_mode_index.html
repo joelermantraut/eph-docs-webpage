@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manual de Usuario - E-Commerce Product Hub</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="front-img-container">
+      <img src="images/front.jpg" alt="front" />
+    </div>
+
+    <div class="index">
+      <p>Indice</p>
+      <div class="menu hidden">
+        <!-- Script will autocomplete this with section titles -->
+      </div>
+    </div>
+
+    <div class="browser">
+      <input type="text" placeholder="Buscar..." />
+    </div>
+
+    <div class="container">
+      <h1 class="first-title">EPH: Modo Online</h1>
+
+      <div id="busqueda" class="section">
+        <h2 class="title">Búsqueda</h2>
+        <div class="content">
+          <p>
+            Para realizar una búsqueda, existen dos caminos. El primero es
+            completando el cuadro de búsqueda que indica “Buscar”, y luego
+            presionar el botón “Buscar”, con el símbolo de una lupa a su
+            izquierda.
+          </p>
+          <div class="img-container">
+            <img src="images/busqueda.jpg" alt="busqueda" />
+          </div>
+          <p>
+            Esto abre directamente el buscado con los archivos encontrados,
+            donde en su descripción se incluya el contenido escrito en el cuadro
+            de búsqueda. Esta búsqueda también se puede hacer presionando el
+            botón “Enter” o “Intro”, en lugar de clickear el botón “Buscar”.
+          </p>
+          <p>
+            El otro camino, que permite realizar una búsqueda más detallada, es
+            clickeando el botón “Buscar”, sin nada escrito en el cuadro de
+            búsqueda. Esto abrirá una ventana, que nos permitirá elegir según
+            qué parámetro buscar. Igual que en la anterior, tendremos un cuadro
+            de búsqueda para escribir que nos interesa encontrar, y un botón
+            “Buscar”, para comenzar la búsqueda.
+          </p>
+          <div class="img-container">
+            <img src="images/cuadro_de_busqueda.jpg" alt="cuadro_de_busqueda" />
+          </div>
+
+          <p>
+            Al buscar, se abre la ventana de productos, en este caso para la
+            búsqueda “pintura”:
+          </p>
+          <div class="img-container">
+            <img src="images/productos.png" alt="productos" />
+          </div>
+          <div id="ordenamiento" class="section">
+            <h4 class="title">Funciones de ordenamiento</h4>
+            <div class="content">
+              <p>
+                En esta vista se listan los productos como fueron agregados
+                originalmente. Por defecto, están ordenados alfabéticamente
+                según el código. Si se quiere, se puede elegir según qué columna
+                ordenar, clickeando en los títulos de cada una.
+              </p>
+              <div class="img-container">
+                <img src="images/ordenamiento.jpg" alt="ordenamiento" />
+              </div>
+            </div>
+          </div>
+          <div id="edicion" class="section">
+            <h4 class="title">Funciones de edición</h4>
+            <div class="content">
+              <p>
+                En caso de querer modificar un producto, ya sea en código,
+                descripción o precio, puede realizar simplemente haciendo doble
+                click, y modificando su valor. Al presionar ENTER, este valor se
+                modificará en la base de datos <span class="bold">local</span>.
+              </p>
+              <div class="note">
+                <p>
+                  <span class="bold">NOTA</span>: Esta modificación queda
+                  guardada en la base de datos
+                  <span class="underlined">local</span>. La base de datos
+                  compartida NO se modifica en cada uno de estos cambios. Sin
+                  embargo, si se agrega un libro o se realiza alguna
+                  modificación que implica actualizar la base de datos
+                  compartida con la local, estas modificaciones si se
+                  compartirán.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="opciones_ayuda" class="section">
+        <h2 class="title">Opciones de ayuda</h2>
+        <div class="content">
+          <p>
+            Para ofrecer ayuda e información sobre EPH se ofrecen dos opciones:
+          </p>
+          <ul>
+            <li>
+              <span class="underlined">Botón “Sobre EPH”</span>: Que despliega
+              información relevante respecto al software y sus condiciones de
+              uso.
+            </li>
+            <li>
+              <span class="underlined">Botón “Ayuda”</span>: Que al presionar,
+              abre este mismo manual.
+            </li>
+          </ul>
+          <div class="img-container">
+            <img src="images/user.png" alt="user" />
+          </div>
+        </div>
+      </div>
+
+      <div id="control_bases_datos" class="section">
+        <h2 class="title">Control de bases de datos</h2>
+        <div class="content">
+          <p>
+            Los siguientes controles corresponden al manejo de bases de datos
+            locales.
+          </p>
+          <div class="img-container">
+            <img src="images/bases_de_datos.png" alt="bases_de_datos" />
+          </div>
+          <ul>
+            <li>
+              <span class="underlined">Agregar planilla</span>: Permite agregar
+              una hoja de Excel de productos, a la base de datos local. Para
+              poder ver un producto durante una búsqueda, es necesario primero
+              agregarlo a la base de datos.
+            </li>
+            <li>
+              <span class="underlined">Backup de base de datos</span>: Permite
+              hacer una copia de esta base datos, en una carpeta elegida. Esto
+              se puede realizar con la intención de hacer un backup, para evitar
+              el riesgo de perder la copia actual, si está requirió varias hojas
+              de Excel para completarse.
+            </li>
+            <li>
+              <span class="underlined">Editar base de datos</span>: Permite
+              revisar y eliminar todos los productos de los archivos agregados
+              hasta el momento. Esto es útil si, por ejemplo, se agregó un libro
+              por error, o se configuró mal, y se desea quitar de la base local.
+            </li>
+            <li>
+              <span class="underlined">Limpiar base de datos</span>: Reinicia a
+              0 la base de datos actual.
+            </li>
+          </ul>
+          <p>
+            A continuación, se detalla el proceso para agregar una hoja de
+            Excel.
+          </p>
+
+          <div id="agregado_productos" class="section">
+            <h3 class="title">Agregar productos</h3>
+            <div class="content">
+              <p>
+                Primeramente, presionar el botón “Agregar planilla”, presentada
+                anteriormente. Esto abrirá una ventana de selección de
+                archivo/s, que permitirá elegir el/los archivos que se quieran
+                agregar a la base de datos local.
+                <span class="bold"
+                  >Comenzaremos explicando la adición de un único archivo.</span
+                >
+              </p>
+              <div id="metodo_unica_plantilla" class="section">
+                <h4 class="title">Método para una única plantilla</h4>
+                <div class="content">
+                  <p>
+                    Luego de elegir un archivo mediante la ventana de selección
+                    de archivo/s, se presentará el siguiente menú:
+                  </p>
+                  <div class="img-container">
+                    <img
+                      src="images/configuracion_excel.png"
+                      alt="configuracion_excel"
+                    />
+                  </div>
+                  <p>En este menú, se presentan varias opciones:</p>
+                  <ul>
+                    <li>
+                      <span class="underlined">Selección de hoja de datos</span
+                      >: En un archivo de Excel, a veces hay más de una hoja
+                      disponible. Este menú permite elegir cual de las hojas
+                      utilizar. En el caso de la imagen, el archivo elegido
+                      presenta una única hoja, por lo cual, no se puede cambiar.
+                    </li>
+                    <li>
+                      <span class="underlined">Columna de códigos</span>: Letra
+                      de la columna, en Excel, donde se listan los códigos de
+                      producto.
+                    </li>
+                    <li>
+                      <span class="underlined">Columna de descripciones</span>:
+                      Letra de la columna, en Excel, donde se listan las
+                      descripciones de producto.
+                    </li>
+                    <li>
+                      <span class="underlined">Columna de precios</span>: Letra
+                      de la columna, en Excel, donde se listan los precios.
+                    </li>
+                    <li>
+                      <span class="underlined"
+                        >Inserte porcentaje de ganancia (%)</span
+                      >: El software está pensado para cargar las hojas
+                      recibidas directamente de los proveedores, donde los
+                      precios son aquellos a los que el usuario de este software
+                      los compró. Por lo tanto, este parámetro permite fijar un
+                      porcentaje adicional, que se le sumará a cada producto
+                      para que al buscar, se pueda ver el precio de venta final.
+                      Como solo se permite agregar un único porcentaje como
+                      modificador, en la sección
+                      <a href="#calculo_ganancia">“Cálculo de ganancia”</a>, se
+                      detalla cómo obtener el porcentaje que se debe fijar en
+                      caso de querer agregar más de un aumento porcentual (por
+                      ejemplo, IVA + ganancia).
+                    </li>
+                    <li>
+                      <span class="underlined">Código de proveedor</span>:
+                      Defina un código para este proveedor, de tal manera que
+                      cuando agregue un archivo del mismo proveedor con precios
+                      nuevos (actualizados), estos se reemplazan en la base de
+                      datos local, manteniendo los productos con precios
+                      actuales, evitando así verlos por duplicado.
+                    </li>
+                  </ul>
+                  <div class="note">
+                    <p>
+                      <span class="bold">NOTA</span>: En el título de la
+                      ventana, se puede leer “Configurar Excel” y entre
+                      comillas, el nombre del archivo elegido. Esto es útil en
+                      el caso de que el usuario haya olvidado la hoja elegida
+                      luego de seleccionarla.
+                    </p>
+                  </div>
+                  <p>
+                    Para continuar y agregar el libro elegido a la base de datos
+                    local, presionar el botón “Finalizar”. Esto actualizará la
+                    base de datos local.
+                  </p>
+                </div>
+              </div>
+              <div id="base_datos_compartida" class="section">
+                <h4 class="title">Base de datos compartida</h4>
+                <div class="content">
+                  <p>
+                    Luego de darle al botón “Finalizar”, en el modo online, la
+                    base de datos actualizada se subirá a la carpeta compartida
+                    en Google Drive. Esto permitirá sincronizar esta base de
+                    datos entre distintas computadoras, que tengan EPH
+                    instalado.
+                  </p>
+                  <div class="note">
+                    <p>
+                      <span class="bold">NOTA</span>: Si elige “Cancelar” al
+                      momento en el que el software pide confirmación para subir
+                      la base de datos a la carpeta compartida, entonces la base
+                      de datos generada no se subirá a la carpeta en Google
+                      Drive. Como consecuencia, la base de datos compartida
+                      quedará desincronizada con la base de datos local, y estás
+                      no se volverán a sincronizar hasta que no se agregue un
+                      nuevo libro a la base de datos.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div id="metodo_multiples_plantillas" class="section">
+                <h4 class="title">Método para múltiples plantillas</h4>
+                <div class="content">
+                  <p>
+                    Para cargar múltiples planillas simultáneamente, el método
+                    es el mismo que para una única planilla. Solo se requieren
+                    algunas consideraciones:
+                  </p>
+                  <ul>
+                    <li>
+                      Al abrirse la ventana de configuración de Excel, no
+                      aparecerá el menú que permite elegir desde qué hoja cargar
+                      los datos. En este modo, los datos se cargan siempre desde
+                      la primera hoja de cada planilla.
+                      <span class="underlined"
+                        >Si alguna hoja está corrupta o no se puede cargar, se
+                        omite.</span
+                      >
+                    </li>
+                    <li>
+                      En el resto de las opciones, los valores que se elijan se
+                      aplicarán para todas las planillas. Por ejemplo, si se
+                      elige el valor A para el parámetro de códigos, se aplicará
+                      para todas las planillas indistintamente.
+                    </li>
+                    <li>
+                      Tener presente que el código de proveedor, se aplicará
+                      para todos los productos de todos los libros cargados.
+                    </li>
+                  </ul>
+                  <p>
+                    Esto es lo único a tomar en cuenta. El resto de los pasos se
+                    explican en la sección anterior.
+                  </p>
+                </div>
+              </div>
+              <div id="calculo_ganancia" class="section">
+                <h4 class="title">Cálculo de ganancia</h4>
+                <div class="content">
+                  <p>
+                    El usuario puede experimentar dudas respecto a cómo colocar
+                    correctamente el porcentaje de ganancia, si necesitas hacer
+                    más de una modificación. Supongamos un caso real, donde al
+                    precio de compra de un producto, el vendedor debe agregarle
+                    un 21% de IVA, más su ganancia. Supondremos que su ganancia
+                    es del 35%. En ese caso, el porcentaje total queda:
+                  </p>
+                  <div class="img-container">
+                    <img src="images/formula1.png" alt="formula1" />
+                  </div>
+                  <p>Por ejemplo, para nuestro caso:</p>
+                  <div class="img-container">
+                    <img src="images/formula2.png" alt="formula2" />
+                  </div>
+                  <p>
+                    De esta manera, sabemos que el porcentaje que tenemos que
+                    aplicar a nuestros productos será de 63%. Si se quieren
+                    agregar más de dos incrementos porcentajes, se siguen
+                    agregando productos a la ecuación:
+                  </p>
+                  <div class="img-container">
+                    <img src="images/formula3.png" alt="formula3" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="backup_base_datos" class="section">
+            <h3 class="title">Backup de base de datos</h3>
+            <div class="content">
+              <p>
+                La opción “Backup de base de datos” permite copiar la base de
+                datos local a otra ubicación de la computadora, con la intención
+                de cuidar que no se sobreescriba y se pierdan los avances hasta
+                el momento. Al presionar esta opción, se abre un ventana de
+                selección de directorio, y al elegir “Seleccionar carpeta”, se
+                copia el archivo y se cierra la ventana.
+              </p>
+            </div>
+          </div>
+
+          <div id="editar_bases_de_datos" class="section">
+            <h3 class="title">Editar base de datos</h3>
+            <div class="content">
+              <p>
+                En esta sección, se pueden ver los libros agregados hasta el
+                momento, y en caso de requerirlo, eliminar todos los productos
+                de un cierto libro, de nuestra base de datos. Para acceder,
+                presionar este botón, y esto abrirá una nueva ventana, que
+                permitirá ver todos los libros disponibles hasta el momento:
+              </p>
+              <div class="img-container">
+                <img
+                  src="images/editar_bases_de_datos.png"
+                  alt="editar_bases_de_datos"
+                />
+              </div>
+              <p>
+                Como venimos trabajando hasta ahora, solo hay un libro agregado.
+                Para eliminarlo, debemos hacer doble click sobre cualquier campo
+                de este libro. Entonces, se abrirá una ventana confirmando si se
+                desea borrar este libro de la base de datos:
+              </p>
+              <div class="img-container">
+                <img
+                  src="images/confirmacion_eliminar_libro.png"
+                  alt="confirmacion_eliminar_libro"
+                />
+              </div>
+              <p>
+                A lo que podremos responder afirmativa o negativamente. En caso
+                de presionar “Ok”, el libro se borrará de la base de datos, y
+                está se actualizará.
+              </p>
+              <div class="note">
+                <p>
+                  <span class="bold">NOTA</span>: El libro de donde se cargó en
+                  su momento, <span class="bold">NO</span> se eliminará.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div id="limpiar_base_de_datos" class="section">
+            <h3 class="title">Limpiar base de datos</h3>
+            <div class="content">
+              <p>
+                Al presionar este botón, se abrirá un cuadro de diálogo para
+                confirmar la acción, y en caso de presionar “Ok”, se reiniciará
+                la base de datos a 0.
+              </p>
+              <p>
+                <span class="underlined">En este modo</span>, En este modo, la
+                base de datos compartida se eliminará luego de eliminar la base
+                datos local, de tal forma que ambas queden limpias.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="opciones_online" class="section">
+          <h2 class="title">Opciones Online</h2>
+          <div class="content">
+            <p>
+              Existen dos controles adicionales específicos del modo online.
+              Estos se pueden encontrar en la sección “Opciones Online”:
+            </p>
+            <div class="img-container">
+              <img src="images/opciones_online.png" alt="opciones_online" />
+            </div>
+            <ul>
+              <li>
+                <span class="underlined">Carpeta compartida</span>: Esta opción
+                permite reasignar el enlace a la carpeta compartida donde se
+                guarda una copia online de las bases de datos. En la sección
+                correspondiente se detalla el proceso para obtener este enlace y
+                cargar en la opción correspondiente.
+              </li>
+              <li>
+                <span class="underlined">Descargar bases de datos</span>: En
+                caso de que una copia de EPH en otra computadora haya
+                actualizado la base de datos, puede ser requerido que la copia
+                en la computadora actual actualice su base de datos local con la
+                copia cargada en la carpeta compartida. Esta opción permite
+                descargar la base de datos compartida y reemplazar la base de
+                datos local.
+              </li>
+            </ul>
+            <div id="carpeta_compartida" class="section">
+              <h3 class="title">Carpeta compartida</h3>
+              <div class="content">
+                <p>
+                  En esta sección, se detalla primero como obtener el enlace a
+                  la carpeta en Google Drive, y luego como cargar el enlace a la
+                  opción correspondiente.
+                </p>
+                <div id="obtener_enlace_drive" class="section">
+                  <h4 class="title">
+                    Obtener enlace a la carpeta en Google Drive
+                  </h4>
+                  <div class="content">
+                    <p>
+                      Primeramente, debemos crear una carpeta. Si ya tiene una
+                      carpeta preparada para esto, puede saltarse este paso.
+                      Siga los siguientes pasos:
+                    </p>
+                    <ol>
+                      <li>
+                        Ingrese a
+                        <a href="https://drive.google.com/drive/u/0/home"
+                          >Google Drive</a
+                        >.
+                      </li>
+                      <li>
+                        Click en el botón “Nuevo”, ubicado arriba a la
+                        izquierda.
+                      </li>
+                      <li>
+                        Aparecerá un menú, entre las opciones disponibles,
+                        elegir la primera opción, “Nueva carpeta”:
+                        <br />
+                        <div class="img-container">
+                          <img
+                            src="images/nueva_carpeta.png"
+                            alt="nueva_carpeta"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        Aparecerá un cuadro de diálogo, introduzca el nombre de
+                        su carpeta. Elija “Crear”.
+                      </li>
+                      <li>
+                        Luego de crear la carpeta, esta aparecerá seleccionada,
+                        en la unidad. El siguiente paso es hacer click derecho
+                        sobre la carpeta, donde aparecerá un menú.
+                        <br />
+                        <div class="img-container">
+                          <img
+                            src="images/menu_compartir.jpg"
+                            alt="menu_compartir"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        De este menú, elegir la opción “Compartir”, entre las
+                        opciones desplegadas, la que dice “Copiar enlace”. De
+                        esta manera, el enlace quedará copiado.
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+                <div id="cargar_enlace" class="section">
+                  <h4 class="title">Cargar enlace de la carpeta compartida</h4>
+                  <div class="content">
+                    <p>
+                      Los siguientes pasos, detallan cómo agregar el enlace
+                      obtenido a la configuración de la aplicación:
+                    </p>
+                    <ol>
+                      <li>
+                        Presionar el botón “Carpeta compartida”, en la sección
+                        “Opciones Online”.
+                      </li>
+                      <li>
+                        Esto desplegará el siguiente menú:
+                        <br />
+                        <div class="img-container">
+                          <img
+                          src="images/actualizar_enlace.png"
+                          alt="actualizar_enlace"
+                        />
+                        </div>
+                      </li>
+                      <li>
+                        Haciendo click derecho sobre el campo que dice “URL”, se
+                        pegará automáticamente la URL de la carpeta copiada
+                        previamente.
+                      </li>
+                      <li>
+                        Finalizamos presionando el botón “Actualizar”. Al hacer
+                        esto, el software analizará si el enlace provisto
+                        corresponde a un enlace de carpeta de Google Drive. De
+                        no ser así, mostrará un cartel de advertencia, y
+                        solicitará nuevamente el enlace.
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="descargar_base_datos" class="section">
+              <p>
+                Como se mencionó previamente, está opción actualizar la base de
+                datos local con la base de datos compartida. Para esto, presione
+                el botón “Descargar base de datos”. Se abrirá un cuadro de
+                diálogo, pidiéndonos confirmación:
+              </p>
+              <div class="img-container">
+                            <img
+                src="images/confirmacion_descargar_bases_de_datos.png"
+                alt="confirmacion_descargar_bases_de_datos"
+              />
+              </div>
+              <p>
+                Si seleccionamos “Confirmar”, la base de datos local se
+                reemplazará. Si por el contrario, optamos por “Cancelar”, la
+                ventana se cerrará, cancelando el procedimiento.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <p>Y con esto concluye la documentación del modo online.</p>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <p class="footer-text">
+          © <span id="current-year"></span> Joel Ermantraut. Todos los derechos
+          reservados.
+        </p>
+      </div>
+    </footer>
+
+    <div class="search-indicator hidden">
+      <button class="search-close">X</button>
+      <button class="search-prev">&lt;</button>
+      <span class="search-num">0</span>
+      <button class="search-next">&gt;</button>
+    </div>
+
+    <div class="to-top">
+      <p>↑</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>

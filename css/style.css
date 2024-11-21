@@ -137,10 +137,6 @@ img {
 .section .title::after {
   content: "";
 }
-.section.hidden .title::after {
-  content: " (oculto)";
-  font-size: 0.8em;
-}
 .section .content {
   /* display: block; */
   margin-bottom: 15px;
@@ -148,9 +144,13 @@ img {
 
   transition: max-height .5s ease-in-out;
 }
+.section.hidden .title::after {
+  content: " (oculto)";
+  font-size: 0.8em;
+}
 .section.hidden .content {
   /* display: none; */
-  max-height: 0;
+  /* max-height: 0; */
   padding: 0;
   margin: 0;
 
@@ -166,9 +166,6 @@ img {
 }
 
 /* Content Styling */
-.content p, .content ul {
-}
-
 .content ul {
   list-style: disc inside;
 }
@@ -220,6 +217,10 @@ button {
 
 button:hover {
   background: #2980b9;
+}
+
+.button-modes {
+  text-align: center;
 }
 
 /* Responsive Design */
