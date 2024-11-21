@@ -156,6 +156,15 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo(0, 0);
     });
 
+    window.addEventListener("scroll", function() {
+        if (window.scrollY < 400) {
+            // Top limit added based on layout
+            to_top.classList.add("hidden");
+        } else {
+            to_top.classList.remove("hidden");
+        }
+    });
+
     // ------------ TO TOP ------------
 });
 

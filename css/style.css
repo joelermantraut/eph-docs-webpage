@@ -426,10 +426,16 @@ button:hover {
   text-align: center;
 
   cursor: pointer;
+
+  display: block;
 }
 
 .to-top p {
   font-size: 20px;
+}
+
+.to-top.hidden {
+  display: none;
 }
 
 /* Responsive Adjustments */
