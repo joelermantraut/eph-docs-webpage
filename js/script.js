@@ -71,8 +71,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Out of function to access it later
     var search_results = undefined;
     var search_curr_index = 0;
+    var browser_el = document.getElementsByClassName("browser")[0];
+    var MANUAL_PATH = "/js/" + browser_el.id + ".json";
+    // This defines json data filename in js folder
 
-    fetchDocument("/js/manual.json").then(data => {
+    fetchDocument(MANUAL_PATH).then(data => {
         documentData = data;
 
         // Configure Fuse.js
@@ -81,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    var browser_el = document.getElementsByClassName("browser")[0];
     browser_el.addEventListener("keyup", function(event) { 
         if (event.key === "Enter") {
             // Get the value of the input browser
