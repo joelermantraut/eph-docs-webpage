@@ -14,25 +14,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get the list of section titles
     var titles_els = document.querySelectorAll(".section .title");
 
+    /*
     titles_els.forEach(title => {
         title.addEventListener('click', () => {
             const section = title.parentElement;
-            let content = section.querySelector(".content");
             if (section.classList.contains('hidden')) {
-                content.style.maxHeight = content.scrollHeight + 'px';
-                section.classList.remove('hidden');
-                parent_sections = getParentSectionsByClass(objetive_element);
-                parent_sections.forEach(section => {
-                    section.classList.remove('hidden');
-                    content = section.querySelector(".content");
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                });
+                // slideSection(section);
+                slideSection(section);
             } else {
-                section.classList.add('hidden');
-                content.style.maxHeight = null;
+                slideUp(section);
             }
         });
       });
+      */
 
     // Loop through the titles and add them to the menu
     for (var i = 0; i < titles_els.length; i++) {
@@ -41,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!(titles_els[i].tagName === "H1" || titles_els[i].tagName === "H2"))
             continue;
-        // Not include all because there are too many titles
+        // Not include all titles because there are too many
 
         var li = document.createElement("li");
         var a = document.createElement("a");
@@ -57,14 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
 
             objetive_element = document.getElementById(link.href.split('#')[1]);
-            objetive_element.classList.remove('hidden');
-            parent_sections = getParentSectionsByClass(objetive_element);
-            parent_sections.forEach(section => {
-                section.classList.remove('hidden');
-            });
+            slideSection(objetive_element);
             
             window.location.hash = link.href.split('#')[1];
-            // Removes # from url
+            // Removes # from url and scrolls to the section
         });
       });
 
@@ -73,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
         menu.classList.toggle("hidden");
     });
 
-    collideAllSections();
+    // collapseAllSections();
 
     // ------------ INDEX ------------
 
@@ -168,13 +158,34 @@ document.addEventListener('DOMContentLoaded', function() {
     // ------------ TO TOP ------------
 });
 
-function collideAllSections() {
+function slideDown(section) {
+    let content = section.querySelector(".content");
+    if (section.classList.contains('hidden')) {
+        section.classList.remove('hidden');
+    }
+}
+
+function slideUp(section) {
+    let content = section.querySelector(".content");
+    if (content) {
+        content.style.height = "0px";
+    }
+}
+
+function slideSection(section) {
+    // If a child section must be slided, all
+    // parent sections must be slided too
+    slideDown(section);
+    parent_sections = getParentSectionsByClass(section);
+    parent_sections.forEach(parent => {
+        slideDown(parent);
+    });
+}
+
+function collapseAllSections() {
     var sections = document.querySelectorAll(".section");
     sections.forEach(section => {
-        let content = section.querySelector(".content");
-
-        content.style.maxHeight = null;
-        section.classList.add('hidden');
+        slideUp(section);
     });
 }
 
