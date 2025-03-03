@@ -174,20 +174,23 @@ document.addEventListener("DOMContentLoaded", function () {
   // ------------ CALCULATOR ------------
 
   var calc = document.getElementsByClassName("calc")[0];
-  var calc_button = calc.getElementsByTagName("button")[0];
-  var calc_inputs = calc.getElementsByTagName("input");
 
-  calc_button.addEventListener("click", function () {
-    var product = 1;
-    for (var i = 0; i < calc_inputs.length; i++) {
-      var input_value = calc_inputs[i].value;
-      if (input_value.length <= 0) continue;
-      product *= 1 + parseInt(input_value) / 100;
-    }
-    calc_inputs[calc_inputs.length - 1].value =
-      String((product - 1.0).toFixed(2) * 100) + "%";
-    // Result in last input
-  });
+  if (calc != undefined) {
+    var calc_button = calc.getElementsByTagName("button")[0];
+    var calc_inputs = calc.getElementsByTagName("input");
+
+    calc_button.addEventListener("click", function () {
+      var product = 1;
+      for (var i = 0; i < calc_inputs.length; i++) {
+        var input_value = calc_inputs[i].value;
+        if (input_value.length <= 0) continue;
+        product *= 1 + parseInt(input_value) / 100;
+      }
+      calc_inputs[calc_inputs.length - 1].value =
+        String((product - 1.0).toFixed(2) * 100) + "%";
+      // Result in last input
+    });
+  }
 });
 
 /*
