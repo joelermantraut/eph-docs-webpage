@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var search_results = undefined;
   var search_curr_index = 0;
   var browser_el = document.getElementsByClassName("browser")[0];
-  var MANUAL_PATH = "./js/" + browser_el.id + ".json";
+  var MANUAL_PATH = "./eph-docs-webpage/js/" + browser_el.id + ".json";
   // This defines json data filename in js folder
 
   const options = {
